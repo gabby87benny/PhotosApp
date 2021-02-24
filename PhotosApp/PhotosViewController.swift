@@ -6,10 +6,11 @@
 //
 
 import UIKit
+import PhotosAPI
 
 class PhotosViewController: UIViewController {
 
-    let apiManager: APIManager_Protocol = APIManager()
+    let apiManager = APIManager()
     var photos: [Photo] = []
 
     @IBOutlet weak var tblView: UITableView!
@@ -23,14 +24,14 @@ class PhotosViewController: UIViewController {
         
         self.apiManager.fetchPhotos { (result) in
             switch result {
-            
+
             case .success(let photos):
-                self.photos = photos
+                self.photos.append(contentsOf: photos)
                 self.tblView.reloadData()
-            
+
             case .failure(let error):
                 print("The photo fetch is failure: \(error)")
-            
+
             }
         }
     }

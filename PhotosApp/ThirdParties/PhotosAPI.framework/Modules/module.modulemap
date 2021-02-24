@@ -1,0 +1,11 @@
+framework module PhotosAPI {
+  umbrella header "PhotosAPI.h"
+
+  export *
+  module * { export * }
+}
+
+module PhotosAPI.Swift {
+    header "PhotosAPI-Swift.h"
+    requires objc
+}

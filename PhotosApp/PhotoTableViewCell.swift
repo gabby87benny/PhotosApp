@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import PhotosAPI
 
 class PhotoTableViewCell: UITableViewCell {
 
