@@ -20,6 +20,10 @@ class PhotosViewController: UIViewController {
         fetchPhotos()
     }
     
+    /**
+    Fetches photos from APIManager.
+    */
+    
     func fetchPhotos() {
         
         self.apiManager.fetchPhotos { (result) in
@@ -36,6 +40,8 @@ class PhotosViewController: UIViewController {
         }
     }
 }
+
+//MARK : Table view data sources
 
 extension PhotosViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
